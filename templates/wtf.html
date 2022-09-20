@@ -1,0 +1,46 @@
+<form method="post" action="{{ url_for('login') }}" novalidate>
+    {{ form.csrf_token }}
+    <p>
+        {{ form.cafe.label }}<br>{{ form.cafe(size=30) }}
+        {% for err in form.cafe.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.location.label }}<br>{{ form.location() }}
+        {% for err in form.location.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+        <p>
+        {{ form.open.label }}<br>{{ form.open() }}
+        {% for err in form.open.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.close.label }}<br>{{ form.close() }}
+        {% for err in form.close.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.coffee.label }}<br>{{ form.coffee() }}
+        {% for err in form.coffee.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.wifi.label }}<br>{{ form.wifi() }}
+        {% for err in form.wifi.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+    <p>
+        {{ form.power.label }}<br>{{ form.power() }}
+        {% for err in form.power.errors %}
+        <span style="color:red">{{ err }}</span>
+        {% endfor %}
+    </p>
+    {{ form.submit }}
+</form>
